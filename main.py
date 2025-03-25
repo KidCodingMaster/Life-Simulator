@@ -2,12 +2,13 @@
 A small game where the player can be what ever they want
 """
 
+import sys
 from utils.get_info import get_age, get_job, get_name
 from utils.jobs import UnEmployed, Engineer
 from utils.user import User
 
 
-jobs = {"unemployed": UnEmployed, 'engineer': Engineer}
+jobs = {"unemployed": UnEmployed, "engineer": Engineer}
 
 name = get_name()
 age = get_age()
@@ -25,6 +26,8 @@ while True:
         print("Type 'age' to change the age")
         print("Type 'job' to change the job")
         print("Type 'work' to work")
+        print("Type 'money' to see how much money you have")
+        print("Type 'exit' to exit")
     elif command == "name":
         new_name = get_name()
         user.set_name(new_name)
@@ -52,3 +55,8 @@ while True:
             continue
 
         user.work(user.job.work(time))
+    elif command == "money":
+        print(f"You have ${user.money} money")
+    elif command == "exit":
+        print("Thanks for playing Life Simulator!")
+        sys.exit()

@@ -44,7 +44,6 @@ def get_job(name, age, jobs):
     if job == "help":
         for job_name in jobs:
             print("You can become a " + job_name)
-
         return get_job(name, age, jobs)
     elif (job_class := jobs.get(job)) is not None:
         return job_class(name, age)
