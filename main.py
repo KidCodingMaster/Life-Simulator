@@ -27,16 +27,17 @@ while True:
         print("Type 'work' to work")
     elif command == "name":
         new_name = get_name()
-        job.set_name(new_name)
+        user.set_name(new_name)
 
         print("Name set to " + new_name)
     elif command == "age":
         new_age = get_age()
-        job.set_age(new_age)
+        user.set_age(new_age)
 
         print("Age set to " + str(new_age))
     elif command == "job":
-        job = get_job(name, age, jobs)
+        job = get_job(user.name, user.age, jobs)
+        user.set_job(job)
 
         print("Job set to " + str(job))
     elif command == "work":

@@ -32,3 +32,10 @@ class User:
         self.age = new_age
 
         self.job.set_age(new_age)
+
+    def set_job(self, new_age):
+        """
+        Function to set the job of the user
+        """
+
+        self.job = new_age
