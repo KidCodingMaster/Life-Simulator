@@ -2,8 +2,9 @@
 A small game where the player can be what ever they want
 """
 
-from get_info import get_age, get_job, get_name
-from jobs import UnEmployed
+from utils.get_info import get_age, get_job, get_name
+from utils.jobs import UnEmployed
+from utils.user import User
 
 
 jobs = {"unemployed": UnEmployed}
@@ -12,6 +13,8 @@ name = get_name()
 age = get_age()
 
 job = get_job(name, age, jobs)
+
+user = User(job)
 
 # Main Loop
 while True:
@@ -39,3 +42,4 @@ while True:
     elif command == "work":
         if isinstance(job, UnEmployed):
             print("You are unemployed!")
+            continue
