@@ -3,11 +3,11 @@ A small game where the player can be what ever they want
 """
 
 from utils.get_info import get_age, get_job, get_name
-from utils.jobs import UnEmployed
+from utils.jobs import UnEmployed, Engineer
 from utils.user import User
 
 
-jobs = {"unemployed": UnEmployed}
+jobs = {"unemployed": UnEmployed, 'engineer': Engineer}
 
 name = get_name()
 age = get_age()
@@ -44,3 +44,11 @@ while True:
         if isinstance(job, UnEmployed):
             print("You are unemployed!")
             continue
+
+        try:
+            time = int(input("How long do you want to work for? "))
+        except ValueError:
+            print("Please enter a numerical value")
+            continue
+
+        user.work(user.job.work(time))

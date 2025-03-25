@@ -42,7 +42,9 @@ def get_job(name, age, jobs):
     job = input("What job do you want (type help to see all job)? ").lower()
 
     if job == "help":
-        print("You can be an unemployed person")
+        for job_name in jobs:
+            print("You can become a " + job_name)
+
         return get_job(name, age, jobs)
     elif (job_class := jobs.get(job)) is not None:
         return job_class(name, age)

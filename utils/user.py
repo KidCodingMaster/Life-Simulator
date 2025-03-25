@@ -39,3 +39,12 @@ class User:
         """
 
         self.job = new_age
+
+    def work(self, money):
+        """
+        Function to add money to the user
+        """
+
+        self.money += money
+
+        print("You now have " + str(self.money) + " money")
