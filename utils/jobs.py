@@ -62,3 +62,21 @@ class Engineer(Job):
         return (
             (self.salary / 12) * (time / (8 * 60 * 60)) * 1000
         )  # Formula to calculate the salary
+
+
+class Doctor(Job):
+    """
+    Job for doctors
+    """
+
+    def __init__(self, name, age):
+        super().__init__(name, age)
+
+        self.salary = random.randint(30000, 40000)
+
+    def work(self, time):
+        sleep(time)
+
+        return (
+            (self.salary / 12) * (time / (8 * 60 * 60)) * 1000
+        )  # Formula to calculate the salary

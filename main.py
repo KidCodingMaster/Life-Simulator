@@ -6,7 +6,7 @@ import sys
 from threading import Thread
 from time import sleep
 from utils.get_info import get_age, get_job, get_name
-from utils.jobs import UnEmployed, Engineer
+from utils.jobs import UnEmployed, Engineer, Doctor
 from utils.user import User
 
 
@@ -29,7 +29,7 @@ def reduce_stats(user_for_stats):
         sleep(1)
 
 
-jobs = {"unemployed": UnEmployed, "engineer": Engineer}
+jobs = {"unemployed": UnEmployed, "engineer": Engineer, "doctor": Doctor}
 
 name = get_name()
 age = get_age()
