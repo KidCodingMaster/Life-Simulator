@@ -3,9 +3,30 @@ A small game where the player can be what ever they want
 """
 
 import sys
+from threading import Thread
+from time import sleep
 from utils.get_info import get_age, get_job, get_name
 from utils.jobs import UnEmployed, Engineer
 from utils.user import User
+
+
+def reduce_stats(user_for_stats):
+    """
+    Function to reduce the stats of the user
+    """
+
+    while True:
+        user_for_stats.hunger -= 1
+        user_for_stats.thirst -= 1
+
+        if user_for_stats.hunger <= 0:
+            print("\nYou died of hunger!")
+            sys.exit()
+        elif user_for_stats.thirst <= 0:
+            print("\nYou died of thirst!")
+            sys.exit()
+
+        sleep(1)
 
 
 jobs = {"unemployed": UnEmployed, "engineer": Engineer}
@@ -16,6 +37,8 @@ age = get_age()
 job = get_job(name, age, jobs)
 
 user = User(job)
+stats_thread = Thread(target=reduce_stats, args=(user,))
+stats_thread.start()
 
 # Main Loop
 while True:

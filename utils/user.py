@@ -15,6 +15,9 @@ class User:
 
         self.job = job
 
+        self.hunger = 100
+        self.thirst = 100
+
     def set_name(self, new_name):
         """
         Function to set the name of the user

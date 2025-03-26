@@ -59,6 +59,6 @@ class Engineer(Job):
     def work(self, time):
         sleep(time)
 
-        return (self.salary / 12) * (
-            time / (8 * 60 * 60)
+        return (
+            (self.salary / 12) * (time / (8 * 60 * 60)) * 1000
         )  # Formula to calculate the salary
